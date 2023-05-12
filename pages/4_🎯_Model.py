@@ -11,8 +11,8 @@ def create_form():
     st.title('Patient data form')
 
     # Connexion à la BDD.
-    conn = pymysql.connect(host='localhost',
-                           port=int(3306),
+    conn = pymysql.connect(host='127.0.0.1',
+                           port=3306,
                            user='root',
                            passwd='Root1234+',
                            db='cancer')
