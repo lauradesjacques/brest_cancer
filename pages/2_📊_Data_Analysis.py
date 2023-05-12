@@ -8,7 +8,6 @@ st.set_page_config(layout="wide")
 data = pd.read_csv("./data/data.csv")
 data = data.drop(['Unnamed: 32'], axis=1)
 
-
 st.title('Data Visualisation')
 #diagnosis = st.selectbox("Features :", data_cols.columns)
 

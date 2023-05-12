@@ -133,3 +133,4 @@ dmypy.json
 
 #folder data
 #/data
+.streamlit

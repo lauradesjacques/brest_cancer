@@ -1,15 +1,9 @@
 import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy import inspect
-import streamlit as st
-import numpy as np
-import streamlit.components.v1 as components
-import plotly.graph_objs as go
 
-
-def create_table(table_name:str):
-    #engine=create_engine('mysql+pymysql://root:@localhost/cancer')
-    engine = create_engine("mysql+pymysql://root:Root1234+@localhost:3306/cancer")
+def create_table(table_name:str, host, user, pwd, db):
+    engine = create_engine(f"mysql+pymysql://{user}:{pwd}@{host}:3306/{db}")
     inspector=inspect(engine)
     if not table_name in inspector.get_table_names():
 

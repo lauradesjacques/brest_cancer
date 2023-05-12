@@ -4,8 +4,6 @@ import plotly.graph_objects as go
 import streamlit.components.v1 as components
 
 st.set_page_config(layout="wide")
-data = pd.read_csv("./data/data.csv")
-diagnosis = data['diagnosis'].value_counts()
 
 # Création d'un conteneur Bootstrap avec marges à 0
 components.html(
@@ -21,8 +19,7 @@ de cancer et a touché plus de 2,2 millions de personnes en
 
 <br>
 <div class="text-30, font-weight-bold"> Methode de diagnostic </div>
-<p class="text-justify"> Le diagnostic est une étape importante du traitement du cancer du sein qui influence lourdement le pro-
-nostic de la patiente. Pris en charge dès ses prémices, un cancer du sein offre en effet davantage de chance
+<p class="text-justify"> Le diagnostic est une étape importante du traitement du cancer du sein qui influence lourdement le pronostic de la patiente. Pris en charge dès ses prémices, un cancer du sein offre en effet davantage de chance
 de survie.
 De fait, la science s’applique depuis longtemps à élaborer des méthodes de dépistage et de diagnostic
 permettant de mieux identifier et catégoriser les tumeurs mammaires. </p>
@@ -44,20 +41,3 @@ le professionnel de santé et/ou par l’intelligence artificielle.
     """,
     height=840,
 )
-
-#-----DEBUT---PIE--CHART-----#
-# Création du pie chart avec Plotly
-fig = go.Figure(
-    go.Pie(
-        labels=['Benign', 'Malignant'],
-        values=diagnosis,
-        hole=0.5,  # pour créer un donut chart, mettre cette valeur à <1
-        pull=[0.1, 0, 0, 0,
-              0],  # pour tirer une tranche spécifique du pie chart
-        marker=dict(
-            colors=['#ff7f0e', '#1f77b4', '#2ca02c', '#d62728', '#9467bd'
-                    ]),  # couleurs des tranches
-    ))
-# Affichage du pie chart avec Streamlit
-st.plotly_chart(fig)
-#-----FIN---PIE--CHART-----#
