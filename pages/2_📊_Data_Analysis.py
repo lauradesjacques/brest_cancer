@@ -1,13 +1,11 @@
 import streamlit as st
 import pandas as pd
-import plotly.graph_objects as go
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 st.set_page_config(layout="wide")
 data = pd.read_csv("./data/data.csv")
 data = data.drop(['Unnamed: 32'], axis=1)
-
 
 st.title('Data Visualisation')
 #diagnosis = st.selectbox("Features :", data_cols.columns)
