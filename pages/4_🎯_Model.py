@@ -18,7 +18,7 @@ def create_form():
                            db='cancer')
 
     # On créer la table de prédiction s'il n'existe pas.
-    create_table(table_name="resultat")
+    create_table(table_name="resultat", host='127.0.0.1', user='root',pwd='Root1234+',db='cancer')
 
     # Initialisation du formulaire
     min_value = 0.00
